@@ -153,8 +153,6 @@ apr_status_t h2_c1_io_init(h2_c1_io *io, h2_session *session)
          * see https://issues.apache.org/jira/browse/TS-2503 
          */
         io->warmup_size = h2_config_sgeti64(session->s, H2_CONF_TLS_WARMUP_SIZE);
-        io->cooldown_usecs = (h2_config_sgeti(session->s, H2_CONF_TLS_COOLDOWN_SECS)
-                              * APR_USEC_PER_SEC);
         io->cooldown_usecs = 0;
         io->write_size = (io->cooldown_usecs > 0?
                           WRITE_SIZE_INITIAL : WRITE_SIZE_MAX);

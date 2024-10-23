@@ -615,7 +615,6 @@ yes:
         if (eval->jflag) {
             eval->jflag = 0;
             if ((ipc = ipc->lb1) == 0) {
-                ipc = eval->commands->ptrspace;
                 break;
             }
         } else
