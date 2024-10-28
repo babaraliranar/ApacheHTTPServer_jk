@@ -21,6 +21,10 @@
  *
  */
 
+#if !defined(WIN32) && !defined(NETWARE)
+#include "ap_config_auto.h"
+#endif
+
 #include "apr.h"
 #include "apr_general.h"        /* for signal stuff */
 #include "apr_strings.h"
