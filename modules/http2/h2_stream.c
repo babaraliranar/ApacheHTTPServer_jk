@@ -1510,7 +1510,6 @@ static ssize_t stream_data_cb(nghttp2_session *ng2s,
                           "eof on receive (read len=%ld, %ld in buffer)"),
                           (long)length, (long)buf_len);
             eos = 1;
-            rv = APR_SUCCESS;
         }
         else if (APR_ECONNRESET == rv || APR_ECONNABORTED == rv) {
             ap_log_cerror(APLOG_MARK, APLOG_DEBUG, rv, c1,

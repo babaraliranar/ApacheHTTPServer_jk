@@ -511,7 +511,7 @@ AP_DECLARE(int) ap_regexec_ex(const ap_regex_t *preg,
     if (rc >= 0) {
         apr_size_t n = rc, i;
         if (n == 0 || n > nmatch)
-            rc = n = nmatch; /* All capture slots were filled in */
+            n = nmatch; /* All capture slots were filled in */
         for (i = 0; i < n; i++) {
             pmatch[i].rm_so = ovector[i * 2];
             pmatch[i].rm_eo = ovector[i * 2 + 1];
